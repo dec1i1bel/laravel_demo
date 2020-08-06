@@ -37,3 +37,8 @@ Route::post('/submit', function(Request $request) {
     $task = tap(new App\Task($data))->save();
     return redirect('/');
 });
+
+Route::delete('/task/{id}', function($id) {
+    Task::findOrFail($id)->delete();
+    return redirect('/');
+});

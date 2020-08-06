@@ -16,9 +16,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">name</th>
-                    <th scope="col">description</th>
+                    <th scope="col">№</th>
+                    <th scope="col">Задача</th>
+                    <th scope="col">Описание</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,11 +27,17 @@
                         <th scope="row">{{ $task->id }}</th>
                         <td>{{ $task->name }}</td>
                         <td>{{ $task->description }}</td>
-                        <td><a href="/delete" class="btn btn-light">удалить</a></td>
+                        <td>
+                            <form action="/task/{{ $task->id }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input class="btn btn-outline-danger" type="submit" value="Удалить"></button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        <a href="/submit">добавить задачу</a>
+        <a class="btn btn-outline-primary" href="/submit">добавить задачу</a>
     </body>
 </html>
