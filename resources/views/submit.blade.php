@@ -30,4 +30,5 @@
             </form>
         </div>
     </div>
+    <a href="/">Отменить</a>
 @endsection
