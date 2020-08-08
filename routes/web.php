@@ -4,11 +4,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Task;
 
-Route::delete('/task/{id}', function($id) {
-    Task::findOrFail($id)->delete();
-    return redirect('/');
-});
-
 Route::resources([
     'tasks' => 'TaskController'
 ]);

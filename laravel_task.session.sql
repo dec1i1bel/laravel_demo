@@ -1,3 +1,3 @@
 -- show tables
--- describe tasks
-select * from tasks
+describe tasks
+-- select * from tasks
